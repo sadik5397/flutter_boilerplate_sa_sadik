@@ -34,8 +34,8 @@ Follow these steps to set up the project:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/sadik5397/flutter-boilerplate.git
-   cd flutter-boilerplate
+   git clone https://github.com/sadik5397/flutter_boilerplate_sa_sadik
+   cd flutter_boilerplate_sa_sadik
    ```
 
 2. **Install dependencies**:
