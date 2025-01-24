@@ -16,7 +16,7 @@ class MyAppInfo {
   static String footerNote = "© $appName ${DateTime.now().year} | All Rights Reserved";
   static String serverInfo = ApiConfig.baseUrl.contains("dev") ? "Development Server" : "Live Server";
 
-  static InkWell appLogoWide({EdgeInsets? padding, Color? color, bool navigateToHome = true, double? height}) => InkWell(
+  static InkWell appLogoWideWidget({EdgeInsets? padding, Color? color, bool navigateToHome = true, double? height}) => InkWell(
       highlightColor: Colors.transparent,
       hoverColor: Colors.transparent,
       splashColor: Colors.transparent,
