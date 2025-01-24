@@ -13,6 +13,7 @@ import 'service/print.dart';
 import 'service/snackbar_message.dart';
 import 'theme/border_radius.dart';
 import 'theme/button.dart';
+import 'theme/chip.dart';
 import 'theme/dropdown_button.dart';
 import 'theme/gap.dart';
 import 'theme/no_data.dart';
@@ -86,6 +87,14 @@ class Boilerplate extends StatelessWidget {
           Gap.gy4,
           //====================================================================================================
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [NoData.loading(), NoData.empty(), NoData.progress(5, 10)]),
+          Gap.gy4,
+          //====================================================================================================
+          Row(spacing: Constant.unitMultiplier * 4, children: [
+            ThemeChip.primary(onTap: () {}, title: "Chip"),
+            ThemeChip.secondary(onTap: () {}, title: "Chip"),
+            ThemeChip.border(onTap: () {}, title: "Chip"),
+            ThemeChip.blank(onTap: () {}, title: "Chip")
+          ]),
           Gap.gy4,
           //====================================================================================================
           Row(mainAxisAlignment: MainAxisAlignment.center, spacing: Constant.unitMultiplier, children: [
