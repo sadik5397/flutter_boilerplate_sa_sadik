@@ -47,7 +47,7 @@ class Boilerplate extends StatelessWidget {
             Container(padding: ThemePadding.p3, color: ThemeColor.alternate, child: Text("alternate")),
             Container(padding: ThemePadding.p3, color: ThemeColor.hover, child: Text("hover")),
             Container(padding: ThemePadding.p3, color: ThemeColor.backgroundLight, child: Text("backgroundLight")),
-            Container(padding: ThemePadding.p3, color: ThemeColor.backgroundDark, child: Text("backgroundLight")),
+            Container(padding: ThemePadding.p3, color: ThemeColor.backgroundDark, child: Text("backgroundDark")),
             Container(padding: ThemePadding.p3, color: ThemeColor.jetBlack, child: Text("jetBlack")),
             Container(padding: ThemePadding.p3, color: ThemeColor.grey, child: Text("grey")),
             Container(padding: ThemePadding.p3, color: ThemeColor.success, child: Text("success")),
