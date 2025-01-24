@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../theme/border_radius.dart';
 
-class Link {
+class Hyperlink {
   static Widget widget({required Widget child, required void Function() onTap, BorderRadius? borderRadius, double? inkIntensity}) => Stack(children: [
     child,
     Positioned.fill(
