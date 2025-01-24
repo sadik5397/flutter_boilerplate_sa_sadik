@@ -17,7 +17,7 @@ class MyDatePicker {
           isDense: true,
           alignLabelWithHint: true,
           filled: true,
-          fillColor: isDisable ? ThemeColor.grey.withValues(alpha: .15) : ThemeColor.light.withValues(alpha: .1),
+          fillColor: isDisable ? ThemeColor.grey.withValues(alpha: .15) : ThemeColor.primaryLight,
           floatingLabelBehavior: FloatingLabelBehavior.auto,
           contentPadding: ThemePadding.px3,
           labelStyle: TextStyle(color: ThemeColor.jetBlack, fontSize: 14, fontWeight: FontWeight.w500),

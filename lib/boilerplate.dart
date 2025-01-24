@@ -43,11 +43,11 @@ class Boilerplate extends StatelessWidget {
           Wrap(spacing: Constant.unitMultiplier * 2, runSpacing: Constant.unitMultiplier * 2, children: [
             Container(padding: ThemePadding.p3, color: ThemeColor.primary, child: Text("primary")),
             Container(padding: ThemePadding.p3, color: ThemeColor.primaryLight, child: Text("primaryLight")),
-            Container(padding: ThemePadding.p3, color: ThemeColor.light, child: Text("light")),
             Container(padding: ThemePadding.p3, color: ThemeColor.secondary, child: Text("secondary")),
             Container(padding: ThemePadding.p3, color: ThemeColor.alternate, child: Text("alternate")),
             Container(padding: ThemePadding.p3, color: ThemeColor.hover, child: Text("hover")),
             Container(padding: ThemePadding.p3, color: ThemeColor.backgroundLight, child: Text("backgroundLight")),
+            Container(padding: ThemePadding.p3, color: ThemeColor.backgroundDark, child: Text("backgroundLight")),
             Container(padding: ThemePadding.p3, color: ThemeColor.jetBlack, child: Text("jetBlack")),
             Container(padding: ThemePadding.p3, color: ThemeColor.grey, child: Text("grey")),
             Container(padding: ThemePadding.p3, color: ThemeColor.success, child: Text("success")),
@@ -116,7 +116,7 @@ class Boilerplate extends StatelessWidget {
             margin: ThemePadding.px6,
             height: 100,
             alignment: Alignment.center,
-            decoration: BoxDecoration(color: ThemeColor.light, boxShadow: ThemeShadow.primary, borderRadius: ThemeBorderRadius.r4),
+            decoration: BoxDecoration(color: ThemeColor.primaryLight, boxShadow: ThemeShadow.primary, borderRadius: ThemeBorderRadius.r4),
             child: Text("Primary BoxShadow\nThemeBorderRadius.r4", textAlign: TextAlign.center),
           ),
           Gap.gy6, Gap.gy6, Gap.gy6
