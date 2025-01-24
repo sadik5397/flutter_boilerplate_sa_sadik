@@ -78,6 +78,7 @@ class Boilerplate extends StatelessWidget {
           Gap.gy4,
           //====================================================================================================
           ThemeButton.primary(onTap: () {}, title: "Primary Button"), Gap.gy1,
+          ThemeButton.primaryLight(onTap: () {}, title: "Primary Light Button"), Gap.gy1,
           ThemeButton.secondary(onTap: () {}, title: "Secondary Button"), Gap.gy1,
           ThemeButton.alternative(onTap: () {}, title: "Alternative Button"), Gap.gy1,
           ThemeButton.border(onTap: () {}, title: "Border Button"), Gap.gy1,

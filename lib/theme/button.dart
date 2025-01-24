@@ -18,7 +18,7 @@ class ThemeButton {
               mainAxisSize: MainAxisSize.min,
               children: [Text(title ?? "Submit", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)), Gap.gx2, Icon(icon ?? Icons.chevron_right_rounded, color: Colors.white, size: 16)]));
 
-  static Widget secondary({String? title, IconData? icon, required VoidCallback onTap, bool isLoading = false}) => ElevatedButton(
+  static Widget primaryLight({String? title, IconData? icon, required VoidCallback onTap, bool isLoading = false}) => ElevatedButton(
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(borderRadius: ThemeBorderRadius.r2),
@@ -26,18 +26,33 @@ class ThemeButton {
           elevation: 0,
           padding: ThemePadding.p3.copyWith(left: ThemePadding.value * 6, right: ThemePadding.value * 6)),
       child: isLoading
-          ? Container(width: 20, height: 20, margin: ThemePadding.px5 * 2, padding: ThemePadding.p1, child: const CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
+          ? Container(width: 20, height: 20, margin: ThemePadding.px5 * 2, padding: ThemePadding.p1, child: CircularProgressIndicator(color: ThemeColor.primary, strokeWidth: 2))
           : Row(mainAxisSize: MainAxisSize.min, children: [
               Text(title ?? "Submit", style: TextStyle(color: ThemeColor.primary, fontWeight: FontWeight.w500)),
               Gap.gx2,
               Icon(icon ?? Icons.chevron_right_rounded, color: ThemeColor.primary, size: 16)
             ]));
 
-  static Widget alternative({String? title, IconData? icon, required VoidCallback onTap, bool isLoading = false}) => ElevatedButton(
+  static Widget secondary({String? title, IconData? icon, required VoidCallback onTap, bool isLoading = false}) => ElevatedButton(
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(borderRadius: ThemeBorderRadius.r2),
           backgroundColor: ThemeColor.secondary,
+          elevation: 0,
+          padding: ThemePadding.p3.copyWith(left: ThemePadding.value * 6, right: ThemePadding.value * 6)),
+      child: isLoading
+          ? Container(width: 20, height: 20, margin: ThemePadding.px5 * 2, padding: ThemePadding.p1, child: const CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
+          : Row(mainAxisSize: MainAxisSize.min, children: [
+              Text(title ?? "Submit", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
+              Gap.gx2,
+              Icon(icon ?? Icons.chevron_right_rounded, color: Colors.white, size: 16)
+            ]));
+
+  static Widget alternative({String? title, IconData? icon, required VoidCallback onTap, bool isLoading = false}) => ElevatedButton(
+      onPressed: onTap,
+      style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(borderRadius: ThemeBorderRadius.r2),
+          backgroundColor: ThemeColor.alternate,
           elevation: 0,
           padding: ThemePadding.p3.copyWith(left: ThemePadding.value * 6, right: ThemePadding.value * 6)),
       child: isLoading
@@ -54,7 +69,7 @@ class ThemeButton {
           elevation: 0,
           padding: ThemePadding.p3.copyWith(left: ThemePadding.value * 6, right: ThemePadding.value * 6)),
       child: isLoading
-          ? Container(width: 20, height: 20, margin: ThemePadding.px5 * 2, padding: ThemePadding.p1, child: const CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
+          ? Container(width: 20, height: 20, margin: ThemePadding.px5 * 2, padding: ThemePadding.p1, child: CircularProgressIndicator(color: ThemeColor.primary, strokeWidth: 2))
           : Row(mainAxisSize: MainAxisSize.min, children: [
               Text(title ?? "Submit", style: TextStyle(color: ThemeColor.primary, fontWeight: FontWeight.w500)),
               Gap.gx2,
