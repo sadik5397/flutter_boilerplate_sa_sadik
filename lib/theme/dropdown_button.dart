@@ -32,7 +32,7 @@ class ThemeDropDown {
       enabledBorder: OutlineInputBorder(borderRadius: ThemeBorderRadius.r6, borderSide: BorderSide(width: 1, color: ThemeColor.grey)),
       disabledBorder: OutlineInputBorder(borderRadius: ThemeBorderRadius.r6, borderSide: BorderSide(width: 1, color: ThemeColor.grey)),
       labelText: title,
-      helperText: errorText,
+      helperText: errorText?.isNotEmpty == true ? errorText : null,
       helperStyle: TextStyle(color: ThemeColor.danger),
       alignLabelWithHint: true,
       filled: true,
