@@ -13,7 +13,6 @@ import 'service/print.dart';
 import 'service/snackbar_message.dart';
 import 'theme/border_radius.dart';
 import 'theme/button.dart';
-import 'theme/chip.dart';
 import 'theme/dropdown_button.dart';
 import 'theme/gap.dart';
 import 'theme/no_data.dart';
@@ -65,9 +64,10 @@ class Boilerplate extends StatelessWidget {
           ThemeTextField.inLine(labelText: "InLine TextField Label Text", controller: TextEditingController()),
           Gap.gy4,
           //====================================================================================================
-          ThemeDropDown.primary(title: "Primary Dropdown", options: Seed.randomNames, value: Seed.randomName, onChanged: (value) {}), Gap.gy2,
-          ThemeDropDown.inline(title: "Inline Dropdown", options: Seed.randomNames, value: Seed.randomName, onChanged: (value) {}), Gap.gy2,
+          ThemeDropDown.primary(title: "Primary Dropdown", options: Seed.randomNames, value: null, onChanged: (value) {}), Gap.gy2,
+          ThemeDropDown.map(title: "Map Dropdown", options: Seed.randomObjects, value: null, onChanged: (value) {}), Gap.gy2,
           ThemeDropDown.multiSelect(title: "MultiSelect", options: Seed.randomNames, values: Seed.randomNameList(2), onChanged: (value) {}),
+          ThemeDropDown.multiSelectMap(title: "MultiSelect Map", options: Seed.randomObjects, values: Seed.randomNameList(2), onChanged: (value) {}),
           Gap.gy4,
           //====================================================================================================
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
@@ -87,14 +87,6 @@ class Boilerplate extends StatelessWidget {
           Gap.gy4,
           //====================================================================================================
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [NoData.loading(), NoData.empty(), NoData.progress(5, 10)]),
-          Gap.gy4,
-          //====================================================================================================
-          Row(spacing: Constant.unitMultiplier * 4, children: [
-            ThemeChip.primary(onTap: () {}, title: "Chip"),
-            ThemeChip.secondary(onTap: () {}, title: "Chip"),
-            ThemeChip.border(onTap: () {}, title: "Chip"),
-            ThemeChip.blank(onTap: () {}, title: "Chip")
-          ]),
           Gap.gy4,
           //====================================================================================================
           Row(mainAxisAlignment: MainAxisAlignment.center, spacing: Constant.unitMultiplier, children: [
