@@ -65,9 +65,9 @@ class Boilerplate extends StatelessWidget {
           Gap.gy4,
           //====================================================================================================
           ThemeDropDown.primary(title: "Primary Dropdown", options: Seed.randomNames, value: null, onChanged: (value) {}), Gap.gy2,
-          ThemeDropDown.map(title: "Map Dropdown", options: Seed.randomObjects, value: null, onChanged: (value) {}), Gap.gy2,
-          ThemeDropDown.multiSelect(title: "MultiSelect", options: Seed.randomNames, values: Seed.randomNameList(2), onChanged: (value) {}),
-          ThemeDropDown.multiSelectMap(title: "MultiSelect Map", options: Seed.randomObjects, values: Seed.randomNameList(2), onChanged: (value) {}),
+          ThemeDropDown.map(title: "Map Dropdown",itemString: 'title', options: Seed.randomObjects, value: null, onChanged: (value) {}), Gap.gy2,
+          ThemeDropDown.multiSelect(title: "MultiSelect", options: Seed.randomNames, values: null, onChanged: (value) {}), Gap.gy2,
+          ThemeDropDown.multiSelectMap(title: "MultiSelect Map",itemString: 'title', options: Seed.randomObjects, values: null, onChanged: (value) {}),
           Gap.gy4,
           //====================================================================================================
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
