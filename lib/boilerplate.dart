@@ -17,7 +17,7 @@ import 'theme/dropdown_button.dart';
 import 'theme/gap.dart';
 import 'theme/no_data.dart';
 import 'theme/shadow.dart';
-import 'widget/datepicker.dart';
+import 'theme/datepicker.dart';
 
 class Boilerplate extends StatelessWidget {
   const Boilerplate({super.key});
@@ -60,14 +60,23 @@ class Boilerplate extends StatelessWidget {
           //====================================================================================================
           ThemeTextField.primary(labelText: "Primary TextField Label Text", controller: TextEditingController()), Gap.gy2,
           ThemeTextField.secondary(labelText: "Secondary TextField Label Text", controller: TextEditingController()), Gap.gy2,
+          ThemeTextField.secondary(
+              labelText: "Date TextField",
+              isDate: true,
+              controller: TextEditingController(),
+              onTap: () async {
+                DateTime? date = await ThemeDatePicker.returnSingleDate();
+                Print.success(date);
+              }),
+          Gap.gy2,
           ThemeTextField.search(labelText: "Search TextField Label Text", controller: TextEditingController()), Gap.gy2,
           ThemeTextField.inLine(labelText: "InLine TextField Label Text", controller: TextEditingController()),
           Gap.gy4,
           //====================================================================================================
           ThemeDropDown.primary(title: "Primary Dropdown", options: Seed.randomNames, value: null, onChanged: (value) {}), Gap.gy2,
-          ThemeDropDown.map(title: "Map Dropdown",itemString: 'title', options: Seed.randomObjects, value: null, onChanged: (value) {}), Gap.gy2,
+          ThemeDropDown.map(title: "Map Dropdown", itemString: 'title', options: Seed.randomObjects, value: null, onChanged: (value) {}), Gap.gy2,
           ThemeDropDown.multiSelect(title: "MultiSelect", options: Seed.randomNames, values: null, onChanged: (value) {}), Gap.gy2,
-          ThemeDropDown.multiSelectMap(title: "MultiSelect Map",itemString: 'title', options: Seed.randomObjects, values: null, onChanged: (value) {}),
+          ThemeDropDown.multiSelectMap(title: "MultiSelect Map", itemString: 'title', options: Seed.randomObjects, values: null, onChanged: (value) {}),
           Gap.gy4,
           //====================================================================================================
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
@@ -111,7 +120,14 @@ class Boilerplate extends StatelessWidget {
           ]),
           Gap.gy4,
           //====================================================================================================
-          ThemeButton.border(onTap: () => MyDatePicker.dateRange(onDateRangeSelected: (p0) => Print.info(p0.toString())), title: "Date Picker"), Gap.gy1,
+          ThemeButton.border(onTap: () => ThemeDatePicker.dateRange(onDateRangeSelected: (p0) => Print.info(p0.toString())), title: "Date Picker"), Gap.gy1,
+          ThemeButton.border(
+              title: "Date Picker",
+              onTap: () async {
+                DateTime? date = await ThemeDatePicker.returnSingleDate();
+                Print.success(date);
+              }),
+          Gap.gy1,
           Gap.gy4,
           //====================================================================================================
           Container(
