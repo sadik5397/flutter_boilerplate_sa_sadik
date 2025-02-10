@@ -54,7 +54,8 @@ class ThemeDropDown {
 
   static DropdownButtonProps _dropDownIcon() => DropdownButtonProps(iconSize: 18, icon: Icon(Icons.keyboard_arrow_down), color: ThemeColor.jetBlack.withValues(alpha: .4));
 
-  static ClearButtonProps _clearButton(bool showClearButton) => ClearButtonProps(isVisible: showClearButton, iconSize: 18, icon: Icon(Icons.clear), color: ThemeColor.jetBlack.withValues(alpha: .4));
+  static ClearButtonProps _clearButton(dynamic value, bool showClearButton) =>
+      ClearButtonProps(isVisible: (value == null || value.isEmpty) ? false : showClearButton, iconSize: 18, icon: Icon(Icons.clear), color: ThemeColor.jetBlack.withValues(alpha: .4));
 
   static Text _dropDownValues(List selectedItems, {String? itemString}) =>
       Text(itemString == null ? selectedItems.join(", ") : (List.generate(selectedItems.length, (index) => selectedItems[index][itemString])).join(", "),
@@ -142,7 +143,7 @@ class ThemeDropDown {
         enabled: !isDisable,
         dropdownButtonProps: _dropDownIcon(),
         popupProps: _singleSelectionString(title: title, useSearch: useSearch),
-        clearButtonProps: _clearButton(showClearButton),
+        clearButtonProps: _clearButton(value, showClearButton),
         dropdownDecoratorProps: _decoratorProps(title: title, errorText: errorText, isDisable: isDisable));
   }
 
@@ -168,7 +169,7 @@ class ThemeDropDown {
         enabled: !isDisable,
         popupProps: _singleSelectionMap(title: title, useSearch: useSearch, itemString: itemString),
         dropdownButtonProps: _dropDownIcon(),
-        clearButtonProps: _clearButton(showClearButton),
+        clearButtonProps: _clearButton(value, showClearButton),
         dropdownDecoratorProps: _decoratorProps(title: title, errorText: errorText, isDisable: isDisable));
   }
 
@@ -192,7 +193,7 @@ class ThemeDropDown {
             enabled: !isDisable,
             dropdownButtonProps: _dropDownIcon(),
             popupProps: _multiSelectionString(title: title, useSearch: useSearch),
-            clearButtonProps: _clearButton(showClearButton),
+            clearButtonProps: _clearButton(values, showClearButton),
             dropdownDecoratorProps: _decoratorProps(title: title, errorText: errorText, isDisable: isDisable))
         : DropdownSearch<String>.multiSelection(
             dropdownBuilder: (context, selectedItems) => _dropDownValues(selectedItems),
@@ -203,7 +204,7 @@ class ThemeDropDown {
             enabled: !isDisable,
             dropdownButtonProps: _dropDownIcon(),
             popupProps: _multiSelectionString(title: title, useSearch: useSearch),
-            clearButtonProps: _clearButton(showClearButton),
+            clearButtonProps: _clearButton(values, showClearButton),
             dropdownDecoratorProps: _decoratorProps(title: title, errorText: errorText, isDisable: isDisable));
   }
 
@@ -230,7 +231,7 @@ class ThemeDropDown {
             enabled: !isDisable,
             dropdownButtonProps: _dropDownIcon(),
             popupProps: _multiSelectionMap(itemString: itemString, title: title, useSearch: useSearch),
-            clearButtonProps: _clearButton(showClearButton),
+            clearButtonProps: _clearButton(values, showClearButton),
             dropdownDecoratorProps: _decoratorProps(title: title, errorText: errorText, isDisable: isDisable))
         : DropdownSearch<dynamic>.multiSelection(
             dropdownBuilder: (context, selectedItems) => _dropDownValues(selectedItems, itemString: itemString),
@@ -243,7 +244,7 @@ class ThemeDropDown {
             enabled: !isDisable,
             dropdownButtonProps: _dropDownIcon(),
             popupProps: _multiSelectionMap(itemString: itemString, title: title, useSearch: useSearch),
-            clearButtonProps: _clearButton(showClearButton),
+            clearButtonProps: _clearButton(values, showClearButton),
             dropdownDecoratorProps: _decoratorProps(title: title, errorText: errorText, isDisable: isDisable));
   }
 }
